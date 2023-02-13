@@ -27,10 +27,19 @@ public class Server {
         } 
     }
     
+    public void multiClient() throws IOException {
+        while(true) {
+            Socket client = connection.accept();
+            System.out.println("Connessione effettuata con: " + client.getInetAddress());
+            GestoreClient gestore = new GestoreClient(client); //FIXA STO CODICE NON MI RICORDO CHE E' SU CHATGPT
+        }
+
+    }
+
     public void attendi(){
         try {
             clientSocket = connection.accept(); //creazione oggetto socket GestoreG(clientSocket)
-            
+
         } catch (IOException ex) {
             Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
         }
