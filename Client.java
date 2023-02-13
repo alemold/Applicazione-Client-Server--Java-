@@ -15,7 +15,6 @@ public class Client {
     Socket connection;
     OutputStream os;
     InputStream is;
-    //Valore per il reset del colore di output
     public static final String RESET = "\u001B[0m";
     
    public Client(String nomeDefault, String coloreDefault){
