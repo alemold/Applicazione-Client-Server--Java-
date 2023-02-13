@@ -29,7 +29,8 @@ public class Server {
     
     public void attendi(){
         try {
-            clientSocket = connection.accept();
+            clientSocket = connection.accept(); //creazione oggetto socket GestoreG(clientSocket)
+            
         } catch (IOException ex) {
             Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -42,6 +43,7 @@ public class Server {
             BufferedReader br = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             messaggioRicevuto = br.readLine();
             System.out.println("CLIENT: " + messaggioRicevuto);
+            System.out.println(clientSocket.getLocalSocketAddress()); 
         } catch (IOException ex) {
             Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
         }
